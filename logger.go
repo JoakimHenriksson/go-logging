@@ -137,7 +137,7 @@ func Reset() {
 
 // IsEnabledFor returns true if the logger is enabled for the given level.
 func (l *Logger) IsEnabledFor(level Level) bool {
-	return defaultBackend.IsEnabledFor(level, l.Module)
+	return defaultBackend.IsEnabledFor(level, l.Module) || l.backend != nil && l.backend.IsEnabledFor(level, l.Module)
 }
 
 func (l *Logger) log(lvl Level, format *string, args ...interface{}) {
@@ -252,6 +252,16 @@ func (l *Logger) Debug(args ...interface{}) {
 // Debugf logs a message using DEBUG as log level.
 func (l *Logger) Debugf(format string, args ...interface{}) {
 	l.log(DEBUG, &format, args...)
+}
+
+// Trace logs a message using TRACE as log level.
+func (l *Logger) Trace(args ...interface{}) {
+	l.log(TRACE, nil, args...)
+}
+
+// Tracef logs a message using TRACE as log level.
+func (l *Logger) Tracef(format string, args ...interface{}) {
+	l.log(TRACE, &format, args...)
 }
 
 func init() {

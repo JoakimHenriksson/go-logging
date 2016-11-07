@@ -33,6 +33,7 @@ var (
 		WARNING:  ColorSeq(ColorYellow),
 		NOTICE:   ColorSeq(ColorGreen),
 		DEBUG:    ColorSeq(ColorCyan),
+		TRACE:    ColorSeq(ColorWhite),
 	}
 	boldcolors = []string{
 		CRITICAL: ColorSeqBold(ColorMagenta),
@@ -40,6 +41,7 @@ var (
 		WARNING:  ColorSeqBold(ColorYellow),
 		NOTICE:   ColorSeqBold(ColorGreen),
 		DEBUG:    ColorSeqBold(ColorCyan),
+		TRACE:    ColorSeqBold(ColorWhite),
 	}
 )
 

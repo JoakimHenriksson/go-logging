@@ -24,6 +24,7 @@ const (
 	NOTICE
 	INFO
 	DEBUG
+	TRACE
 )
 
 var levelNames = []string{
@@ -33,6 +34,7 @@ var levelNames = []string{
 	"NOTICE",
 	"INFO",
 	"DEBUG",
+	"TRACE",
 }
 
 // String returns the string representation of a logging level.
